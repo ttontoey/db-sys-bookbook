@@ -8,7 +8,7 @@
  - create-post-tables.sql
  - create-trans-table.sql
  - create-other-tables.sql
-3. Import CSV เข้าแต่ละ Table สำหรับแต่ละ Relation (ดูชื่อ CSV)
+3. Import CSV เข้าแต่ละ Table สำหรับแต่ละ Relation (ดูชื่อ CSV แต่ละไฟล์ใน /sql/sample_data_csv)
 4. รัน Query เพิ่ม Referential Integrity
  - add-ref-integrity.sql
 5. ลองรัน Query ที่ต้องส่งใน Final Report ได้ใน /sql/query
