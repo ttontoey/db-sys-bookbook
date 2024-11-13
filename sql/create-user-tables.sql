@@ -7,7 +7,7 @@ CREATE TABLE userInformation(
     nameTitle titles NOT NULL,
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
-    KYCpicture TEXT,
+    KYCpicture TEXT NOT NULL,
     birthDate DATE NOT NULL,
     CONSTRAINT USERINFO_PK PRIMARY KEY (SSN)
 );
@@ -57,6 +57,7 @@ CREATE TABLE seller(
     userName VARCHAR(50) NOT NULL,
     profilePictureURL TEXT,
     lastUpdatedOn TIMESTAMP NOT NULL DEFAULT NOW(), --
+    isSuspended BOOLEAN NOT NULL DEFAULT false, -- !!
     suspendedUntil TIMESTAMP,
     isVerified BOOLEAN NOT NULL DEFAULT false, --
     verifiedBy INTEGER,
