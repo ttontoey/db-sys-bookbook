@@ -23,7 +23,7 @@ CREATE TABLE buyer(
     SSN VARCHAR(20) NOT NULL,
     userName VARCHAR(50) NOT NULL,
     profilePictureURL TEXT,
-    lastUpdatedOn TIMESTAMP NOT NULL DEFAULT NOW(), --
+    lastUpdatedOn TIMESTAMP NOT NULL DEFAULT NOW()::timestamp(0), --
     isSuspended BOOLEAN NOT NULL DEFAULT false, --
     CONSTRAINT BUYER_PK PRIMARY KEY (userId),
     CONSTRAINT BUYER_UNIQUE_USERNAME UNIQUE (userName)
@@ -56,7 +56,7 @@ CREATE TABLE seller(
     SSN VARCHAR(20) NOT NULL,
     userName VARCHAR(50) NOT NULL,
     profilePictureURL TEXT,
-    lastUpdatedOn TIMESTAMP NOT NULL DEFAULT NOW(), --
+    lastUpdatedOn TIMESTAMP NOT NULL DEFAULT NOW()::timestamp(0), --
     isSuspended BOOLEAN NOT NULL DEFAULT false, -- !!
     suspendedUntil TIMESTAMP,
     isVerified BOOLEAN NOT NULL DEFAULT false, --
@@ -81,7 +81,7 @@ CREATE TABLE admin(
     SSN VARCHAR(20) NOT NULL,
     userName VARCHAR(50) NOT NULL,
     profilePictureURL TEXT,
-    lastUpdatedOn TIMESTAMP NOT NULL DEFAULT NOW(), --
+    lastUpdatedOn TIMESTAMP NOT NULL DEFAULT NOW()::timestamp(0), --
     isSuspended BOOLEAN NOT NULL DEFAULT false, --
     CONSTRAINT ADMIN_PK PRIMARY KEY (userId),
     CONSTRAINT ADMIN_UNIQUE_USERNAME UNIQUE (userName)

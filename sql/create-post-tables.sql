@@ -4,7 +4,7 @@ CREATE TYPE bookSpecDesc AS ENUM('Author Signature', 'Limited Edition', 'First E
 
 CREATE TABLE sellPost(
     postId SERIAL NOT NULL,
-    createdOn TIMESTAMP NOT NULL DEFAULT NOW(), --
+    createdOn TIMESTAMP NOT NULL DEFAULT NOW()::timestamp(0), --
     deletedOn TIMESTAMP,
     isApproved BOOLEAN NOT NULL DEFAULT false,
     sellingPrice DECIMAL(10,2) NOT NULL,
