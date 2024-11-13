@@ -1,0 +1,30 @@
+{
+   "title": "employee",
+   "required": ["_id", "emp_fname", "emp_lastname", "emp_phone", "emp_ssn", "emp_dob"],
+   "properties": {
+      "_id": { "bsonType": "objectId" },
+      "emp_fname": { "bsonType": "string" },
+      "emp_lastname": { "bsonType": "string" },
+      "emp_phone": {
+         "bsonType": "string",
+         "pattern": "/^[0-9]{3}-[0-9]{7}$"
+      },
+      "emp_ssn": {
+         "bsonType": "string",
+         "pattern": "/^[0-9]{3}-[0-9]{2}-[0-9]{3}$"
+      },
+      "emp_dob": { "bsonType": "date" },
+      "emp_dependents": {
+         "bsonType": "array",
+         "items": {
+            "bsonType": "object",
+            "properties": {
+               "dep_id": { "bsonType": "string" },
+               "dep_fname": { "bsonType": "string" },
+               "dep_lastname": { "bsonType": "string" },
+               "dep_dob": { "bsonType": "date" }
+            }
+         }
+      }
+   }
+}
