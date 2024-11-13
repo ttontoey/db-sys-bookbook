@@ -10,7 +10,7 @@ CREATE TABLE transaction(
     updatedOn TIMESTAMP DEFAULT NOW(), --
     createdOn TIMESTAMP NOT NULL DEFAULT NOW(), --
     buyerId INTEGER NOT NULL,
-    paymentId INTEGER NOT NULL,
+    paymentId INTEGER,
     postId INTEGER NOT NULL,
     status transStatus NOT NULL DEFAULT 'Pending', --
     detail TEXT,
@@ -28,7 +28,6 @@ CREATE TABLE payment(
     paymentId SERIAL NOT NULL,
     method paymentMethod NOT NULL,
     amount DECIMAL(10,2) NOT NULL,
-    isPaid BOOLEAN NOT NULL DEFAULT false, --
     paidOn TIMESTAMP,
     hashId VARCHAR(100),
     CONSTRAINT PAYMENT_PK PRIMARY KEY (paymentId),
