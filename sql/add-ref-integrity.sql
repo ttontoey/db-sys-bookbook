@@ -59,3 +59,23 @@ ALTER TABLE message ADD CONSTRAINT fk_1 FOREIGN KEY (buyerId) REFERENCES buyer(u
 ALTER TABLE message ADD CONSTRAINT fk_2 FOREIGN KEY (sellerId) REFERENCES seller(userId);
 
 ALTER TABLE searchhistory ADD CONSTRAINT fk_1 FOREIGN KEY (buyerId) REFERENCES buyer(userId);
+
+-- Serial setups
+
+SELECT setval('admin_userid_seq', (SELECT MAX(userid) FROM admin));
+
+SELECT setval('book_bookid_seq', (SELECT MAX(bookid) FROM book));
+
+SELECT setval('buyer_userid_seq', (SELECT MAX(userid) FROM buyer));
+
+SELECT setval('message_messageid_seq', (SELECT MAX(messageid) FROM message));
+
+SELECT setval('payment_paymentid_seq', (SELECT MAX(paymentid) FROM payment));
+
+SELECT setval('seller_userid_seq', (SELECT MAX(userid) FROM seller));
+
+SELECT setval('sellpost_postid_seq', (SELECT MAX(postid) FROM sellpost));
+
+SELECT setval('shipment_shipmentid_seq', (SELECT MAX(shipmentid) FROM shipment));
+
+SELECT setval('transaction_transactionid_seq', (SELECT MAX(transactionid) FROM transaction));

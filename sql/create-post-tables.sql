@@ -4,15 +4,15 @@ CREATE TYPE bookSpecDesc AS ENUM('Author Signature', 'Limited Edition', 'First E
 
 CREATE TABLE sellPost(
     postId SERIAL NOT NULL,
-    createdOn TIMESTAMP NOT NULL,
+    createdOn TIMESTAMP NOT NULL DEFAULT NOW(), --
     deletedOn TIMESTAMP,
-    isApproved BOOLEAN NOT NULL,
+    isApproved BOOLEAN NOT NULL DEFAULT false,
     sellingPrice DECIMAL(10,2) NOT NULL,
     postOwner INTEGER NOT NULL,
     listedBook INTEGER NOT NULL,
-    CONSTRAINT SELLPOSTPOST_PK PRIMARY KEY (postId),
-    CONSTRAINT SELLPOSTPOST_PRICE_POSITIVE CHECK (sellingPrice > 0),
-    CONSTRAINT SELLPOSTPOST_DELETE_AFTER_CREATED CHECK (deletedOn > createdOn)
+    CONSTRAINT SELLPOST_PK PRIMARY KEY (postId),
+    CONSTRAINT SELLPOST_PRICE_POSITIVE CHECK (sellingPrice > 0),
+    CONSTRAINT SELLPOST_DELETE_AFTER_CREATED CHECK (deletedOn > createdOn)
 );
 
 CREATE TABLE specialDescription(

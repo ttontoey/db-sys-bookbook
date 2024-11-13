@@ -10,7 +10,7 @@ CREATE TABLE book(
     description TEXT,
     bookPhotoURL TEXT NOT NULL,
     ISBN VARCHAR(13), 
-    isApproved BOOLEAN NOT NULL,
+    isApproved BOOLEAN NOT NULL DEFAULT false, --
     approvedOn TIMESTAMP, -- moderatedOn?
     rejectedOn TIMESTAMP,
     moderatedBy INTEGER,

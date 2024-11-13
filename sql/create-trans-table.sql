@@ -7,12 +7,12 @@ CREATE TYPE failure AS ENUM('Buyer', 'Shipping', 'Other');
 
 CREATE TABLE transaction(
     transactionId SERIAL NOT NULL,
-    updatedOn TIMESTAMP,
-    createdOn TIMESTAMP NOT NULL,
+    updatedOn TIMESTAMP DEFAULT NOW(), --
+    createdOn TIMESTAMP NOT NULL DEFAULT NOW(), --
     buyerId INTEGER NOT NULL,
     paymentId INTEGER NOT NULL,
     postId INTEGER NOT NULL,
-    status transStatus NOT NULL,
+    status transStatus NOT NULL DEFAULT 'Pending', --
     detail TEXT,
     failType failure,
     CONSTRAINT TRANSACTION_PK PRIMARY KEY (transactionId)
@@ -28,7 +28,7 @@ CREATE TABLE payment(
     paymentId SERIAL NOT NULL,
     method paymentMethod NOT NULL,
     amount DECIMAL(10,2) NOT NULL,
-    isPaid BOOLEAN NOT NULL,
+    isPaid BOOLEAN NOT NULL DEFAULT false, --
     paidOn TIMESTAMP,
     hashId VARCHAR(100),
     CONSTRAINT PAYMENT_PK PRIMARY KEY (paymentId),
@@ -40,6 +40,6 @@ CREATE TABLE shipment(
     transactionId INTEGER NOT NULL,
     trackingURL TEXT,
     method shipMethod NOT NULL,
-    isDelivered BOOLEAN NOT NULL,
+    isDelivered BOOLEAN NOT NULL DEFAULT false, --
     CONSTRAINT SHIPMENT_PK PRIMARY KEY (shipmentId, transactionId)
 );
