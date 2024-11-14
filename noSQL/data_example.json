@@ -1,6 +1,6 @@
 [
    {
-       "_id": { "$oid": "64f234c1a26b2a5b5d1c2f01" },
+
        "bookId": 1,
        "title": "Mystery of the Forgotten Town",
        "author": "John Doe",
