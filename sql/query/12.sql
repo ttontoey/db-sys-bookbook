@@ -1,3 +1,4 @@
+-- 12.) Triggers
 -- Scenario I: Set buyer lastUpdatedOn field to CURRENT TIME whenever username OR profile picture is UPDATED
 CREATE FUNCTION update_lastupdatedon()
 RETURNS TRIGGER 
