@@ -1,4 +1,4 @@
-
+-- 9.) Indexing
 -- Scenario 1: On SellPost table, we frequently have to filter posts by postowner (viewing seller profile)
 SELECT * FROM sellpost WHERE postowner = 1;
 
