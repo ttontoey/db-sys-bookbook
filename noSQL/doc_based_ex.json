@@ -1,9 +1,10 @@
 {
    "title": "Book",
    "bsonType" : "object",
-   "required": ["bookid", "title", "bookPhotoURL"],
+   "required": ["bookId", "title", "bookPhotoURL"],
    "properties": {
-      "bookid": { "bsonType": "objectId" },
+      "_id": {"bsonType": "objectId"},
+      "bookid": { "bsonType": "int" , "auto_increment" : true},
       "title": { "bsonType": "string", "maxLength": 200},
       "author": { "bsonType": "string", "maxLength": 100 },
       "description": { "bsonType": "string" },
