@@ -1,3 +1,4 @@
+-- 11.) Stored Functions
 -- Scenario I: We want to classify customer tier by their total spendings
 CREATE FUNCTION buyer_tier(total_spent FLOAT)
 	RETURNS VARCHAR(10)

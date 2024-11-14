@@ -1,3 +1,4 @@
+-- 10.) Stored Procedures
 -- Scenario I: We want suspend seller and ALSO DISAPPROVE all of seller existing posts
 CREATE PROCEDURE perm_suspend_seller(sellerid INT)
 LANGUAGE plpgsql
