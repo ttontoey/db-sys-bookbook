@@ -1,10 +1,20 @@
 {
-   "title": "employee",
-   "required": ["_id", "emp_fname", "emp_lastname", "emp_phone", "emp_ssn", "emp_dob"],
+   "title": "Book",
+   "bsonType" : "object",
+   "required": ["bookid", "title", "bookPhotoURL"],
    "properties": {
-      "_id": { "bsonType": "objectId" },
-      "emp_fname": { "bsonType": "string" },
-      "emp_lastname": { "bsonType": "string" },
+      "bookid": { "bsonType": "objectId" },
+      "title": { "bsonType": "string", "maxLength": 200},
+      "author": { "bsonType": "string", "maxLength": 100 },
+      "description": { "bsonType": "string" },
+      "bookPhotoURL": { "bsonType": "string" },
+      "ISBN": { "bsonType": "string", "maxLength": 13 },
+      "isApproved": { "bsonType": "bool", "default": false },
+      "approvedOn": { "bsonType": "date" },
+      "rejectedOn": { "bsonType": "date" },
+      "moderatedBy": { "bsonType": "int" },
+      "addedBy": { "bsonType": "int" },
+      "page": { "bsonType": "int", "min": 1 },
       "emp_phone": {
          "bsonType": "string",
          "pattern": "/^[0-9]{3}-[0-9]{7}$"
