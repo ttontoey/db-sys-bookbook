@@ -18,7 +18,7 @@
       },
       {
          "_id": { "$oid": "64babc01d8e144b081c8c911" },
-         "bookid": 11,
+         "bookId": 11,
          "title": "Mystery of the Lost Island",
          "author": "John Doe",
          "description": "A thrilling adventure to uncover a hidden treasure.",
@@ -35,7 +35,7 @@
       },
       {
          "_id": { "$oid": "64babc02d8e144b081c8c912" },
-         "bookid": 12,
+         "bookId": 12,
          "title": "Echoes of Eternity",
          "author": "Emily Johnson",
          "description": "A heartwarming story of love and loss through time.",
@@ -201,6 +201,41 @@
           "page": 370,
           "genres": ["Crime", "Thriller"],
           "tags": ["Bestseller", "Detective"]
-      }
+      },
+      {
+         "_id": { "$oid": "64babc08d8e144b081c8c918" },
+         "bookId": 13,
+         "title": "The Gambler Mind",
+         "author": "Mark Thittrin",
+         "description": "A tip and trick to win every gambling.",
+         "bookPhotoURL": "https://example.com/books/final_bet.jpg",
+         "ISBN": null,
+         "isApproved": false,
+         "approvedOn": null,
+         "rejectedOn": { "$date": "2024-10-02T12:10:00Z" },
+         "moderatedBy": 10007,
+         "addedBy": 10004,
+         "page": 310,
+         "genres": ["Self-Help", "Non-Fiction"],
+         "tags": ["New Release"]
+       },
+       {
+         "_id": { "$oid": "64bdbc02d8e144b081c8c912" },
+         "bookId": 14,
+         "title": "Gambling with Destiny",
+         "author": "Mark Thittrin",
+         "description": "An intense drama exploring the consequences of high-stakes gambling.",
+         "bookPhotoURL": "https://example.com/books/gambling_destiny.jpg",
+         "ISBN": null,
+         "isApproved": false,
+         "approvedOn": null,
+         "rejectedOn": { "$date": "2024-02-05T10:30:00Z" },
+         "moderatedBy": 10007,
+         "addedBy": 10002,
+         "page": 220,
+         "genres": ["Drama", "Thriller"],
+         "tags": ["Dark Fantasy", "Highly Recommended"]
+       }
+       
   ]
   
