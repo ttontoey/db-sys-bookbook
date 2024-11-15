@@ -1,3 +1,8 @@
+# BOOK BOOK Database Design
+### 2110322 Database Systems Final Project
+### Computer Engineering, Chulalongkorn University
+
+
 ## SQL Part
 
 ### PostgreSQL Database Configuration
