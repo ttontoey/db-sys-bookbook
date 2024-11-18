@@ -1,0 +1,47 @@
+{
+   $jsonSchema: {
+      "properties": {
+      "_id": {"bsonType": "objectId"},
+      "bookid": { "bsonType": "int" },
+      "title": { "bsonType": "string", "maxLength": 200},
+      "author": { "bsonType": ["string","null"], "maxLength": 100 },
+     "description": { "bsonType": ["string","null"] },
+     "bookPhotoURL": { "bsonType": "string" },
+     "ISBN": { "bsonType": ["string","null"], "maxLength": 13 },
+     "isApproved": { "bsonType": "bool", "default": false },
+     "approvedOn": { "bsonType": ["date","null"] },
+     "rejectedOn": { "bsonType": ["date","null"] },
+     "moderatedBy": { "bsonType": ["int","null"] },
+     "addedBy": { "bsonType": ["int","null"] },
+     "page": { "bsonType": ["int","null"], "minimum": 1 },
+     "genres": { 
+        "bsonType": "array",
+        "uniqueItems" :  true, 
+        "items": { 
+           "bsonType": "string",
+           "enum": [
+                 "Fiction", "Non-Fiction", "Mystery", "Thriller", "Romance", "Science Fiction", 
+                 "Fantasy", "Historical Fiction", "Horror", "Biography", "Memoir", "Self-Help", 
+                 "Health & Wellness", "Psychology", "Poetry", "Drama", "Adventure", "Children's Literature", 
+                 "Young Adult", "Graphic Novels/Comics", "Crime", "True Crime", "Dystopian", 
+                 "Contemporary", "Religious/Spiritual"
+           ]
+        }
+     },
+     "tags": { 
+       "bsonType": "array",
+       "uniqueItems" :  true,
+       "items": { 
+           "bsonType": "string", 
+           "enum": [
+               "Bestseller", "New Release", "Classic", "Award-Winning", "Must-Read", 
+               "Highly Recommended", "Inspirational", "Coming of Age", "Family Saga", 
+               "Historical", "Dark Fantasy", "Detective", "LGBTQ+", "Young Adult", 
+               "Children's Book", "Short Stories", "Mystery", "Self-Help", 
+               "Thriller", "Romantic Comedy"
+           ]
+        }
+     }
+  }
+}
+}
