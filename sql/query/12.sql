@@ -37,7 +37,7 @@ BEGIN
     END IF;
     RETURN NEW;
 END;
-$$ 
+$$;
 
 CREATE TRIGGER trigger_update_trans_status
 AFTER UPDATE OF isdelivered ON shipment

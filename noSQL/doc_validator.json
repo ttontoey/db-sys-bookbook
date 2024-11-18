@@ -8,7 +8,7 @@
      "description": { "bsonType": ["string","null"] },
      "bookPhotoURL": { "bsonType": "string" },
      "ISBN": { "bsonType": ["string","null"], "maxLength": 13 },
-     "isApproved": { "bsonType": "bool", "default": false },
+     "isApproved": { "bsonType": "bool"},
      "approvedOn": { "bsonType": ["date","null"] },
      "rejectedOn": { "bsonType": ["date","null"] },
      "moderatedBy": { "bsonType": ["int","null"] },
