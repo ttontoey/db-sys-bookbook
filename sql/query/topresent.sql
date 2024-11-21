@@ -54,13 +54,23 @@ SELECT * FROM sellpost WHERE postowner = 1;
 SELECT * FROM sellpost WHERE listedbook = 7;
 
 -- > 10.) Stored Procedures
--- Suspending seller id 4 and disapprove all user posts
-CALL perm_suspend_seller(4);
+-- Suspending seller id 3 and disapprove all user posts
 SELECT * FROM seller;
+
+SELECT * FROM sellpost;
+
+CALL perm_suspend_seller(3);
+
+SELECT * FROM seller;
+
 SELECT * FROM sellpost;
 
 -- Removing contact with mark888.com gambling site promotion
+SELECT * FROM sellercontact
+
 CALL remove_contact_with_keyword('mark888.com');
+
+SELECT * FROM sellercontact
 
 -- 11.) Stored Functions
 -- List and order customers by their tiers
@@ -89,7 +99,8 @@ WHERE (check1 OR check2);
 UPDATE buyer SET username = 'tontoeyngaeee'
 WHERE userid = 3;
 
-SELECT * FROM buyer;
+SELECT userid, lastupdatedon FROM buyer
+WHERE userid = 3;
 
 -- Certain shipment is delivered -> transaction status = completed
 UPDATE shipment

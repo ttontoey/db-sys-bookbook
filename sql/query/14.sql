@@ -1,3 +1,4 @@
+-- 14.) Complex Queries
 -- Scenario I: We want to list buyer user (who has at least 1 payment) by their average discount percentage givens
 SELECT buyerid, f firstname, l lastname, 
 ROUND(AVG(((1 - c/b))), 3) * 100 avg_percent_discount 

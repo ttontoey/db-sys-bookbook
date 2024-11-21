@@ -7,8 +7,8 @@ CREATE TYPE failure AS ENUM('Buyer', 'Shipping', 'Other');
 
 CREATE TABLE transaction(
     transactionId SERIAL NOT NULL,
-    updatedOn TIMESTAMP DEFAULT NOW(), --
-    createdOn TIMESTAMP NOT NULL DEFAULT NOW(), --
+    updatedOn TIMESTAMP DEFAULT NOW()::timestamp(0), --
+    createdOn TIMESTAMP NOT NULL DEFAULT NOW()::timestamp(0), --
     buyerId INTEGER NOT NULL,
     paymentId INTEGER,
     postId INTEGER NOT NULL,
